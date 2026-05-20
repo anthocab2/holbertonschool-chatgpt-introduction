@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Background Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the button to change the background color</h1>
+    <button id="colorButton">Change Color</button>
+
+    <script>
+        // Attach the click event directly to the button
+        document.getElementById("colorButton").addEventListener("click", function() {
+            changeBackgroundColor();
+        });
+
+        function changeBackgroundColor() {
+            // Generate a random color
+            var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            // Ensure the color code has 6 characters
+            while(randomColor.length < 7) {
+                randomColor += "0";
+            }
+            // Change the background color of the body
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
